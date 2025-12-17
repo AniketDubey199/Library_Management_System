@@ -1,10 +1,13 @@
-package main
+package utils
 
-import ("time"
+import (
+	"time"
+
+	"github.com/AniketDubey199/JWT_auth/model"
 	"github.com/golang-jwt/jwt/v4"
 )
 
-func GenerateToken(user *User) (string, error) {
+func GenerateToken(user *model.User) (string, error) {
 	secret := []byte("super-secret-key")
 	method := jwt.SigningMethodHS256
 	claims := jwt.MapClaims{
